@@ -16,7 +16,7 @@
     CCNode *_contentNode;
     CCNode *_pullbackNode;
     CCNode *_mouseJointNode;
-    CCPhysicsNode *_mouseJoint;
+    CCPhysicsJoint *_mouseJoint;
 }
 
 //is called when ccb file has completed loading
@@ -65,8 +65,19 @@
         // releases the joint and lets the catapult snap back
         [_mouseJoint invalidate];
         _mouseJoint = nil;
-        
     }
+}
+
+- (void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    // when touches end, meaning the user releases their finger, release the catapult
+    [self releaseCatapult];
+}
+
+- (void)touchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    // when touches are cancelled, meaning the user drags their finger off the screen or onto something else, release the catapult
+    [self releaseCatapult];
 }
 
 - (void)launchPenguin
