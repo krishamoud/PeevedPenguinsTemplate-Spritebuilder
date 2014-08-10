@@ -154,11 +154,10 @@
 {
     float energy = [pair totalKineticEnergy];
     
-    CCLOG(@"%f", energy);
-    
     // if energy is large enough, remove the seal
     if (energy > 5000.f)
     {
+        CCLOG(@"%f", energy);
         [[_physicsNode space] addPostStepBlock:^
         {
             [self sealRemoved:nodeA];
