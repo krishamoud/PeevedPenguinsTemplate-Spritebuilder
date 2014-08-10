@@ -32,6 +32,8 @@
     //visualize physics bodies and joints
     _physicsNode.debugDraw = YES;
     
+    _physicsNode.collisionDelegate = self;
+    
     // nothing shall collide with our invisible nodes
     _pullbackNode.physicsBody.collisionMask = @[];
     _mouseJointNode.physicsBody.collisionMask = @[];
