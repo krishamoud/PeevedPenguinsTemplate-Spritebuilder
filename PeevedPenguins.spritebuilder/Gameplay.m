@@ -53,14 +53,14 @@
 
 - (void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    //whenever touches move, update the position of the mouseJointNode to the touch positioin
+    // whenever touches move, update the position of the mouseJointNode to the touch position
     CGPoint touchLocation = [touch locationInNode:_contentNode];
     _mouseJointNode.position = touchLocation;
 }
 
 - (void)releaseCatapult
 {
-    if(_mouseJoint != nil)
+    if (_mouseJoint != nil)
     {
         // releases the joint and lets the catapult snap back
         [_mouseJoint invalidate];
