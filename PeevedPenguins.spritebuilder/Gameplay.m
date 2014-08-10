@@ -36,7 +36,7 @@
     penguin.position = ccpAdd(_catapultArm.position, ccp(16, 50));
     
     //add the penguin to the physics node of this scene because it has physics enabled
-    [_phyisicsNode addChild:penguin];
+    [_physicsNode addChild:penguin];
     
     //manually add & apply a force to launch the penguin
     CGPoint launchDirection = ccp(1, 0);
